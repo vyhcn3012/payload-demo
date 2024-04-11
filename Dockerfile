@@ -7,6 +7,10 @@ COPY package*.json ./
 
 COPY . .
 RUN yarn install
+
+# Sao chép các tệp env vào dự án
+COPY .env .env.production
+
 RUN yarn build
 
 FROM base as runtime
@@ -22,6 +26,6 @@ RUN yarn install --production
 COPY --from=builder /home/node/app/dist ./dist
 COPY --from=builder /home/node/app/build ./build
 
-EXPOSE 3000
+# EXPOSE 3000 # Không cần thiết khi sử dụng Kubernetes hoặc môi trường tương tự
 
 CMD ["node", "dist/server.js"]
