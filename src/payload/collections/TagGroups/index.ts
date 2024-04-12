@@ -1,7 +1,5 @@
 import { CollectionConfig } from 'payload/types';
 import { addCreatedBy } from '../../hooks/add-created-by.hook';
-import { addLocale } from '../../hooks/add-locale.hook';
-import { addId } from '../../hooks/add-id.hook';
 
 export const TagGroups: CollectionConfig = {
     slug: 'tag-groups',
@@ -21,6 +19,7 @@ export const TagGroups: CollectionConfig = {
             label: 'Name',
             type: 'text',
             required: true,
+            localized: true,
         },
         {
             name: 'slug',
@@ -65,6 +64,6 @@ export const TagGroups: CollectionConfig = {
         },
     ],
     hooks: {
-        beforeChange: [addCreatedBy, addLocale, addId],
+        beforeChange: [addCreatedBy],
     },
 };

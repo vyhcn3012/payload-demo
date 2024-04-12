@@ -5,7 +5,6 @@ import { mongooseAdapter } from '@payloadcms/db-mongodb'; // database-adapter-im
 import { webpackBundler } from '@payloadcms/bundler-webpack'; // bundler-import
 import { slateEditor } from '@payloadcms/richtext-slate'; // editor-import
 import { buildConfig } from 'payload/config';
-
 import Users from './payload/collections/Users';
 import { TagGroups } from './payload/collections/TagGroups';
 import { Tags } from './payload/collections/Tags';
@@ -32,6 +31,5 @@ export default buildConfig({
     db: mongooseAdapter({
         url: process.env.DATABASE_URI,
     }),
-
     // database-adapter-config-end
 });
