@@ -35,24 +35,6 @@ export const TagGroups: CollectionConfig = {
             defaultValue: true,
         },
         {
-            name: 'uuid',
-            label: 'uuid',
-            type: 'text',
-            access: {
-                create: () => false,
-                update: () => false,
-            },
-        },
-        {
-            name: 'locale',
-            label: 'Locale',
-            type: 'text',
-            access: {
-                create: () => false,
-                update: () => false,
-            },
-        },
-        {
             name: 'created_by',
             label: 'Created By',
             type: 'relationship',
